@@ -34,7 +34,11 @@ pipeline {
                 echo nom
             }
         }
-    }
+        stage(checkout) {
+            steps {
+                git credentialsId: '708d0860-d5b9-4bad-b853-bc53d7ebf44b', url: 'https://github.com/BadBeerus/jenkinsfile.git'
+            }
+        }
     post { 
         always { 
             echo 'cest cooooool!'
